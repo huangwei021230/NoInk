@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/community_navigation"
+    app:startDestination="@id/nav_community">
+
+    <fragment
+        android:id="@+id/nav_community"
+        android:name="com.bagel.noink.ui.community.CommunityFragment"
+        android:label="Community"
+        tools:layout="@layout/fragment_community">
+        <action
+            android:id="@+id/action_nav_community_to_nav_community_detail"
+            app:destination="@id/nav_community_detail">
+            <argument
+                android:name="aid"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_community_detail"
+        android:name="com.bagel.noink.ui.community.PostFragment"
+        android:label="Community Detail"
+        tools:layout="@layout/fragment_post">
+    </fragment>
+
+</navigation>

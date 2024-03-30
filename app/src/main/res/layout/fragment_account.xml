@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_account_new"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.account.AccountFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/avatarImageViewContainer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/avatarImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@mipmap/ic_cat" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/top_username"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:text="用户名"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/avatarImageViewContainer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/note_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="快快记录下今天的生活吧"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/top_username"
+            app:layout_constraintTop_toBottomOf="@+id/top_username" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:cardCornerRadius="@dimen/defaultPadding"
+        app:cardBackgroundColor="@color/white"
+        android:layout_gravity="center"
+        >
+
+        <RelativeLayout
+            android:id="@+id/recordContainer"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="文章数"
+                android:gravity="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/defaultTextSize"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:id="@+id/record_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/textView1"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/defaultTextSize"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:id="@+id/postContainer"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20dp"
+            >
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发布数"
+                android:gravity="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/defaultTextSize"
+                android:padding="10dp"
+                />
+            <TextView
+                android:id="@+id/article_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/textView3"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/defaultTextSize"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:cardCornerRadius="@dimen/defaultPadding"
+        app:cardBackgroundColor="@color/white"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:gravity="center"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            >
+
+            <com.bagel.noink.ui.account.PersonalItemView
+                android:id="@+id/item_username"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                app:icon="@drawable/ic_contacts_nickname"
+                app:name="昵称"
+                app:show_line="true"
+                app:show_more="true"
+                tools:ignore="MissingConstraints" />
+
+            <com.bagel.noink.ui.account.PersonalItemView
+                android:id="@+id/item_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                app:icon="@drawable/ic_contacts_nickname"
+                app:name="性别"
+                app:show_line="true"
+                app:show_more="true" />
+
+            <com.bagel.noink.ui.account.PersonalItemView
+                android:id="@+id/item_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                app:icon="@drawable/ic_contacts_birthday"
+                app:name="出生年月"
+                app:show_line="true"
+                app:show_more="true"
+                tools:ignore="MissingConstraints" />
+
+            <com.bagel.noink.ui.account.PersonalItemView
+                android:id="@+id/item_wechat"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                app:icon="@drawable/ic_wechat"
+                app:name="绑定微信"
+                app:show_line="true"
+                app:show_more="true"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:cardCornerRadius="@dimen/defaultPadding"
+        app:cardBackgroundColor="@color/white"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <com.bagel.noink.ui.account.PersonalItemView
+                android:id="@+id/item_uid"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                app:icon="@drawable/ic_public_contacts"
+                app:name="UID"
+                app:show_line="true"
+                app:show_more="false"
+                tools:ignore="MissingConstraints" />
+
+            <com.bagel.noink.ui.account.PersonalItemView
+                android:id="@+id/item_update_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                app:icon="@drawable/ic_screenshot_penshape"
+                app:name="修改密码"
+                app:show_line="true"
+                app:show_more="true"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!--  测试用的按钮  -->
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="退出登录" />
+
+        <Button
+            android:id="@+id/testButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:visibility="gone"
+            android:text="测试按钮" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/avatarImageViewContainer"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="12dp">
+
+        <ImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@mipmap/ic_cat"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 用户名 -->
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/avatarImageViewContainer"
+        android:layout_alignTop="@id/avatarImageViewContainer"/>
+
+    <!-- 评论正文 -->
+    <TextView
+        android:id="@+id/commentTextView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Comment text goes here..."
+        android:textSize="12sp"
+        android:layout_toEndOf="@id/avatarImageViewContainer"
+        android:layout_below="@id/usernameTextView"
+        android:layout_marginTop="4dp"/>
+
+    <!-- 点赞按钮 -->
+    <ToggleButton
+        android:id="@+id/likeButton"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/heart_selector"
+        android:layout_marginEnd="8dp"
+        android:textOn=""
+        android:textOff=""
+        android:layout_above="@id/commentTextView"
+        android:layout_alignParentEnd="true" />
+
+    <!-- 点赞数 -->
+    <TextView
+        android:id="@+id/likeCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_alignStart="@id/likeButton"
+        android:layout_alignEnd="@+id/likeButton"
+        android:layout_below="@id/likeButton" />
+
+</RelativeLayout>

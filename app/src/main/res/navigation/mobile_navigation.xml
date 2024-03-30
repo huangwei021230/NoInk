@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.bagel.noink.ui.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home_cat" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_card_details"
+            app:destination="@id/nav_card_details" >
+            <argument
+                android:name="listItem"
+                app:argType="com.bagel.noink.bean.ListItemBean" />
+        </action>
+    </fragment>
+
+    <activity
+            android:id="@+id/nav_history"
+            android:name="com.bagel.noink.activity.HistoryActivity"
+            android:label=""
+            tools:layout="@layout/activity_history" />
+
+    <activity
+        android:id="@+id/nav_community"
+        android:name="com.bagel.noink.activity.CommunityActivity"
+        android:label=""
+        tools:layout="@layout/activity_community"/>
+
+    <fragment
+        android:id="@+id/nav_personal_account"
+        android:name="com.bagel.noink.ui.account.AccountFragment"
+        android:label=""
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_nav_personal_account_to_nav_edit_information"
+            app:destination="@id/nav_edit_information" />
+        <action
+            android:id="@+id/action_nav_personal_account_to_nav_login"
+            app:destination="@id/nav_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_edit_information"
+        android:name="com.bagel.noink.ui.account.EditInformationFragment"
+        android:label=""
+        tools:layout="@layout/fragment_edit_information" />
+
+    <fragment
+        android:id="@+id/nav_textGen"
+        android:name="com.bagel.noink.ui.home.TextGenerationFragment"
+        android:label=""
+        tools:layout="@layout/fragment_textgeneration" />
+
+    <fragment
+        android:id="@+id/nav_textEdit"
+        android:name="com.bagel.noink.ui.generate.TextEditFragment"
+        android:label=""
+        tools:layout="@layout/fragment_textedit"/>
+
+    <fragment
+        android:id="@+id/nav_mood"
+        android:name="com.bagel.noink.ui.generate.MoodFragment"
+        android:label=""
+        tools:layout="@layout/fragment_mood"/>
+
+    <fragment
+        android:id="@+id/nav_event"
+        android:name="com.bagel.noink.ui.generate.EventFragment"
+        android:label=""
+        tools:layout="@layout/fragment_event"/>
+
+    <fragment
+        android:id="@+id/nav_length"
+        android:name="com.bagel.noink.ui.generate.LengthFragment"
+        android:label=""
+        tools:layout="@layout/length" />
+
+    <fragment
+        android:id="@+id/nav_card_details"
+        android:name="com.bagel.noink.ui.history.DetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_details" />
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.bagel.noink.ui.account.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_nav_register"
+            app:destination="@id/nav_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.bagel.noink.ui.account.RegisterFragment"
+        android:label=""
+        tools:layout="@layout/fragment_register" />
+
+</navigation>

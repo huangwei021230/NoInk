@@ -1,0 +1,6 @@
+<!-- res/drawable/edit_text_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#CCCCCC" /> <!-- 灰色背景 -->
+    <corners android:radius="8dp" /> <!-- 圆角半径 -->
+</shape>

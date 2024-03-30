@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/history_navigation"
+    app:startDestination="@id/nav_history_list">
+
+    <fragment
+        android:id="@+id/nav_history_list"
+        android:name="com.bagel.noink.ui.history.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_nav_history_list_to_nav_history_details"
+            app:destination="@id/nav_history_details" >
+            <argument
+                android:name="listItem"
+                app:argType="com.bagel.noink.bean.ListItemBean" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_history_details"
+        android:name="com.bagel.noink.ui.history.DetailsFragment"
+        android:label="History Details"
+        tools:layout="@layout/fragment_details" />
+
+</navigation>

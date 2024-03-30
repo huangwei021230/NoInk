@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">没墨水</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">主页</string>
+    <string name="menu_history">历史文案</string>
+    <string name="menu_stars">我的收藏</string>
+    <string name="menu_personal_account">账号设置</string>
+    <string name="menu_community">社区</string>
+    <string name="menu_about">关于没墨水</string>
+    <string name="register">注册</string>
+    <string name="new_user_register">新用户？立即注册</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="title">标题</string>
+    <string name="tag">标记</string>
+
+    <string name="content_demo_movie">刚刚观看了一部令人心潮澎湃的电影！深入的情节、精彩的演技，让我完全沉浸其中。推荐给大家，绝对不容错过！</string>
+    <string name="date_demo_231211">2023年12月11日</string>
+    <string name="title_demo_movie">好好看的电影</string>
+    <string name="third_party_login">第三方账号登录</string>
+    <string name="space_login">登 录</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="username_hint">请输入用户名</string>
+</resources>

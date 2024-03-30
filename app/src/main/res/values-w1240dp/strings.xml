@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register">注册</string>
+    <string name="new_user_register">新用户？立即注册</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="content_demo_movie">刚刚观看了一部令人心潮澎湃的电影！深入的情节、精彩的演技，让我完全沉浸其中。推荐给大家，绝对不容错过！</string>
+    <string name="date_demo_231211">2023年12月11日</string>
+    <string name="password_hint">请输入密码</string>
+</resources>

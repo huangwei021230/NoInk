@@ -1,0 +1,47 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_navigation"
+    app:startDestination="@id/nav_search">
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.bagel.noink.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_nav_search_to_nav_search_result"
+            app:destination="@id/nav_search_result">
+            <argument
+                android:name="searchQuery"
+                app:argType="string" />
+            <argument
+                android:name="moodTags"
+                app:argType="string" />
+            <argument
+                android:name="eventTags"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_search_result"
+        android:name="com.bagel.noink.ui.search.SearchResultFragment"
+        android:label="Search Result"
+        tools:layout="@layout/fragment_search_result">
+        <action
+            android:id="@+id/action_nav_search_result_to_nav_result_details"
+            app:destination="@id/nav_result_details" >
+            <argument
+                android:name="listItem"
+                app:argType="com.bagel.noink.bean.ListItemBean" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_result_details"
+        android:name="com.bagel.noink.ui.history.DetailsFragment"
+        android:label="Result Details"
+        tools:layout="@layout/fragment_details" />
+
+</navigation>

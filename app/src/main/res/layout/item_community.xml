@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white">
+
+<!--    <androidx.cardview.widget.CardView
+        android:id="@+id/avatar_container"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="24dp">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@mipmap/ic_cat"/>
+    </androidx.cardview.widget.CardView>-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/avatar_container"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="36dp">
+
+        <io.getstream.avatarview.AvatarView
+            android:scaleType="centerCrop"
+            android:id="@+id/avatar"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            app:avatarViewBorderColor="@color/teal_200"
+            app:avatarViewBorderWidth="2dp"
+            app:avatarViewIndicatorBorderColor="@color/white"
+            app:avatarViewIndicatorBorderSizeCriteria="10"
+            app:avatarViewIndicatorColor="@color/teal_200"
+            app:avatarViewIndicatorEnabled="true"
+            app:avatarViewBorderRadius="36dp"
+            app:avatarViewIndicatorPosition="bottomRight"
+            app:avatarViewIndicatorSizeCriteria="8"
+            app:avatarViewShape="circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_cat"
+            />
+    </androidx.cardview.widget.CardView>
+
+<!--    <io.getstream.avatarview.AvatarView
+        android:scaleType="center"
+        android:id="@+id/avatar_container"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        app:avatarViewBorderColor="@color/teal_200"
+        app:avatarViewBorderWidth="2dp"
+        app:avatarViewIndicatorBorderColor="@color/white"
+        app:avatarViewIndicatorBorderSizeCriteria="10"
+        app:avatarViewIndicatorColor="@color/teal_200"
+        app:avatarViewIndicatorEnabled="true"
+        app:avatarViewBorderRadius="36dp"
+        app:avatarViewIndicatorPosition="bottomRight"
+        app:avatarViewIndicatorSizeCriteria="8"
+        app:avatarViewShape="circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_cat"
+        />-->
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户名"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#6C6CD5"
+        app:layout_constraintStart_toEndOf="@+id/avatar_container"
+        app:layout_constraintTop_toTopOf="@+id/avatar_container" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width = "280dp"
+        android:layout_height = "wrap_content"
+        android:text="顺利度过第一门期末考了"
+        
+        android:paddingEnd="16dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:columnWidth="75dp"
+        android:gravity="center"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="75dp"
+        app:layout_constraintStart_toStartOf="@+id/content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <ToggleButton
+        android:id="@+id/likeButton"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/toggle_button_selector"
+        android:text="点赞"
+        android:textOn=""
+        android:textOff=""
+        app:layout_constraintStart_toStartOf="@+id/content"
+        app:layout_constraintTop_toBottomOf="@+id/gridView" />
+
+    <ToggleButton
+        android:id="@+id/commentButton"
+        android:layout_marginLeft="80dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/ic_comment"
+        android:text="评论"
+        android:textOn=""
+        android:textOff=""
+        app:layout_constraintStart_toEndOf="@+id/likeButton"
+        app:layout_constraintTop_toBottomOf="@+id/gridView" />
+
+    <TextView
+        android:id="@+id/likeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2145"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toEndOf="@+id/likeButton"
+        app:layout_constraintTop_toTopOf="@+id/likeButton" />
+
+    <TextView
+        android:id="@+id/commentNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4399"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toEndOf="@+id/commentButton"
+        app:layout_constraintTop_toTopOf="@+id/commentButton" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="#E1E1E1"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likeButton" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/commentButton">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

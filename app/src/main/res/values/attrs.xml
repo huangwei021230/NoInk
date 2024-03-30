@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PersonaltemView">
+        <!--    左侧图标    -->
+        <attr name="icon" format="reference" />
+        <!--    左侧标题文字    -->
+        <attr name="name" format="string" />
+        <!--    右侧描述    -->
+        <attr name="data" format="string" />
+        <!--    是否显示右侧箭头    -->
+        <attr name="show_more" format="boolean" />
+        <!--    是否显示下划线    -->
+        <attr name="show_line" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

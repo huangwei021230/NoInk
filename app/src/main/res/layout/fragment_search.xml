@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.search.SearchFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="395dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/searchEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@drawable/rounded_edittext_background"
+                        android:drawableStart="@drawable/ic_search_teal"
+                        android:hint="查找想要的历史文案"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="按标签筛选"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="心情分类"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/mood_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:columnCount="6"
+                android:orientation="horizontal"
+                android:rowCount="3">
+
+                <!-- 开心选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/happy_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="开心"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="开心"
+                    android:textOn="开心"
+                    android:textSize="12sp" />
+
+                <!-- 平静选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/calm_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="平静"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="平静"
+                    android:textOn="平静"
+                    android:textSize="12sp" />
+
+                <!-- 生气选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/angry_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="生气"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="生气"
+                    android:textOn="生气"
+                    android:textSize="12sp" />
+
+                <!-- 无聊选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/bored_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="无聊"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="无聊"
+                    android:textOn="无聊"
+                    android:textSize="12sp" />
+
+                <!-- 恶心选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/disgusted_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="恶心"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="恶心"
+                    android:textOn="恶心"
+                    android:textSize="12sp" />
+
+                <!-- 委屈选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/sad_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="委屈"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="委屈"
+                    android:textOn="委屈"
+                    android:textSize="12sp" />
+
+                <!-- 难过选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/sorrowful_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="难过"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="难过"
+                    android:textOn="难过"
+                    android:textSize="12sp" />
+
+                <!-- 孤独选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/lonely_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="孤独"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="孤独"
+                    android:textOn="孤独"
+                    android:textSize="12sp" />
+
+                <!-- 不知道选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/confused_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="迷茫"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="迷茫"
+                    android:textOn="迷茫"
+                    android:textSize="12sp" />
+
+                <!-- 压力选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/stressed_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="压力"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="压力"
+                    android:textOn="压力"
+                    android:textSize="12sp" />
+
+                <!-- 惊讶选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/surprised_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="惊讶"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="惊讶"
+                    android:textOn="惊讶"
+                    android:textSize="12sp" />
+
+                <!-- 惊喜选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/amazed_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="惊喜"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="惊喜"
+                    android:textOn="惊喜"
+                    android:textSize="12sp" />
+
+                <!-- 疲惫选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/exhausted_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="疲惫"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="疲惫"
+                    android:textOn="疲惫"
+                    android:textSize="12sp" />
+
+                <!-- 尴尬选择按钮 -->
+                <ToggleButton
+                    android:id="@+id/embarrassed_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="尴尬"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="尴尬"
+                    android:textOn="尴尬"
+                    android:textSize="12sp" />
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="事件分类"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/event_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:columnCount="6"
+                android:orientation="horizontal"
+                android:rowCount="6">
+
+                <ToggleButton
+                    android:id="@+id/awkward_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="电影"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="电影"
+                    android:textOn="电影"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/game_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="游戏"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="游戏"
+                    android:textOn="游戏"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/family_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="家庭"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="家庭"
+                    android:textOn="家庭"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/travel_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="旅行"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="旅行"
+                    android:textOn="旅行"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/relationship_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="关系"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="关系"
+                    android:textOn="关系"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/food_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="食物"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="食物"
+                    android:textOn="食物"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/music_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="音乐"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="音乐"
+                    android:textOn="音乐"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/work_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="工作"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="工作"
+                    android:textOn="工作"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/rest_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="休息"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="休息"
+                    android:textOn="休息"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/love_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="爱情"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="爱情"
+                    android:textOn="爱情"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/shopping_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="逛街"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="逛街"
+                    android:textOn="逛街"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/adventure_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="冒险"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="冒险"
+                    android:textOn="冒险"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/brainstorm_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="脑洞"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="脑洞"
+                    android:textOn="脑洞"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/study_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="学习"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="学习"
+                    android:textOn="学习"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/read_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="阅读"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="阅读"
+                    android:textOn="阅读"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/exercise_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="运动"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="运动"
+                    android:textOn="运动"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/organize_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="整理"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="整理"
+                    android:textOn="整理"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/fitness_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="健身"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="健身"
+                    android:textOn="健身"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/sick_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="生病"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="生病"
+                    android:textOn="生病"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/idol_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="爱豆"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="爱豆"
+                    android:textOn="爱豆"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/pet_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="宠物"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="宠物"
+                    android:textOn="宠物"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/plant_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="植物"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="植物"
+                    android:textOn="植物"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/tv_series_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="追剧"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="追剧"
+                    android:textOn="追剧"
+                    android:textSize="12sp" />
+
+
+                <ToggleButton
+                    android:id="@+id/online_shopping_toggle_button"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_toggle_button_background"
+                    android:padding="8dp"
+                    android:text="网购"
+                    android:textColor="@drawable/custom_toggle_button_text_color"
+                    android:textOff="网购"
+                    android:textOn="网购"
+                    android:textSize="12sp" />
+
+
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/buttonLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:paddingBottom="15dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:text="重置" />
+
+            <Button
+                android:id="@+id/confirmButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确认" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
